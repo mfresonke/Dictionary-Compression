@@ -28,16 +28,21 @@ public class SIM {
         //END DEBUG
 
         // Parse Input Args
-        if (args.length != 2) {
+        if (args.length != 1) {
             System.err.println("Please enter the correct number of arguments");
             System.exit(2);
         }
 
+        String compOrDecompArg = args[0];
+
         try {
-            if (args[1].equals(FLAG_COMPRESS)) {
+            if (compOrDecompArg.equals(FLAG_COMPRESS)) {
                 runCompression(FILENAME_COMPRESSION_INPUT, FILENAME_COMPRESSION_OUTPUT);
-            } else if (args[1].equals(FLAG_DECOMPRESS)) {
+            } else if (compOrDecompArg.equals(FLAG_DECOMPRESS)) {
                 runDecompression(FILENAME_DECOMPRESSION_INPUT, FILENAME_DECOMPRESSION_OUTPUT);
+            } else {
+                System.err.println("Error, unrecognized argument '"+compOrDecompArg+"'.");
+                System.exit(4);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -185,9 +190,26 @@ class Dictionary {
             if (i > 0) {
                 sb.append("\n");
             }
-            String inst = instructions.get(i);
-            sb.append(inst);
+//            sb.append(generateBinaryIndex(i, NUM_BITS));
+//            sb.append(" ");
+            sb.append(instructions.get(i));
         }
+        return sb.toString();
+    }
+
+    private static String generateBinaryIndex(int num, int numBits) {
+        String raw = Integer.toBinaryString(num);
+        if (raw.length() > numBits) {
+            throw new IllegalStateException("num greater than number bits");
+        } else if (raw.length() == numBits) {
+            return raw;
+        }
+        StringBuilder sb = new StringBuilder(numBits);
+        int zerosNeeded = numBits - raw.length();
+        for (int i=0; i!=zerosNeeded; ++i) {
+            sb.append("0");
+        }
+        sb.append(raw);
         return sb.toString();
     }
 }

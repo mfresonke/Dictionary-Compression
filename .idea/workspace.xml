@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e645478-96db-44ca-99e7-91eafd0cf8e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/max.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/maxfresonke/cda4630/Main.java" afterPath="$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java" afterPath="$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java" />
     </list>
     <ignored path="P2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +29,8 @@
       <file leaf-file-name="SIM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+            <state relative-caret-position="244">
+              <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -44,7 +40,6 @@
                 <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
                 <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
                 <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-                <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
                 <element signature="class#InputFile#0" expanded="false" />
                 <element signature="method#iterator#0;class#InputFile#0" expanded="false" />
               </folding>
@@ -71,8 +66,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="600" />
-    <option name="y" value="22" />
+    <option name="x" value="909" />
+    <option name="y" value="132" />
     <option name="width" value="840" />
     <option name="height" value="824" />
   </component>
@@ -117,8 +112,8 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.maxfresonke.cda4630.SIM" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="1" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/.." />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -375,8 +370,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="600" y="22" width="840" height="824" extended-state="0" />
-    <editor active="true" />
+    <frame x="909" y="132" width="840" height="824" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -464,7 +459,6 @@
             <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#InputFile#0" expanded="false" />
             <element signature="method#iterator#0;class#InputFile#0" expanded="false" />
           </folding>
@@ -484,7 +478,6 @@
             <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#InputFile#0" expanded="false" />
             <element signature="method#iterator#0;class#InputFile#0" expanded="false" />
           </folding>
@@ -504,7 +497,6 @@
             <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#InputFile#0" expanded="false" />
             <element signature="method#iterator#0;class#InputFile#0" expanded="false" />
           </folding>
@@ -513,8 +505,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+        <state relative-caret-position="244">
+          <caret line="192" column="49" selection-start-line="192" selection-start-column="49" selection-end-line="192" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -524,7 +516,6 @@
             <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#InputFile#0" expanded="false" />
             <element signature="method#iterator#0;class#InputFile#0" expanded="false" />
           </folding>
