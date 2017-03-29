@@ -11,6 +11,8 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class SIM {
+    /* Debug Settings */
+    private static final boolean DEBUG_OUT = true;
 
     /* Helper Constants */
     private static final String FILENAME_COMPRESSION_INPUT = "original.txt";
@@ -22,6 +24,7 @@ public class SIM {
     private static final String FLAG_DECOMPRESS = "2";
 
     private static final int FORMAT_BITS = 3; // num bits that denote the format (or strategy)
+    private static final int OUTPUT_WIDTH = 32;
 
     private static final int DICTIONARY_SIZE = 16;
     private static final int DICTIONARY_NUM_BITS = 16;
@@ -71,8 +74,9 @@ public class SIM {
 
     private static void runTesting() throws IOException {
 
+        // Compression strategies in order of priority
         List<CompressionStrategy> compStrategies = Arrays.asList(
-                null,   // Original Binary
+                new OriginalBinaryEncodingStrategy(),
                 new RunLengthEncodingStrategy(),
                 null,   // Bitmask-Based Compression
                 null,   // 1-bit Mismatch
@@ -90,22 +94,57 @@ public class SIM {
 
         String[] compOutLines = compOut.split("\n");
         DecompressionInput decompIn = new DecompressionInput(Arrays.asList(compOutLines), compStrategies, DICTIONARY_SEPARATOR, FORMAT_BITS);
-        String decompOut = runDecompression;
+        String decompOut = runDecompression(decompIn);
 
         System.out.println("=================== DECOMPRESSION OUT ===================");
         System.out.println(decompOut);
         System.out.println("=================== END DECOMPRESSION OUT ===================");
     }
 
-    private static String runCompression(CompressionInput input) throws IOException {
-        StringBuilder output = new StringBuilder();
+    private static String runCompression(CompressionInput input, List<CompressionStrategy> compStrategies) throws IOException {
+
+        CompressionOutputBuilder outputBuilder = new CompressionOutputBuilder(FORMAT_BITS, OUTPUT_WIDTH, DEBUG_OUT);
 
         // Run a pass over time file counting the number of occurances of a given binary.
         Dictionary dict = new Dictionary(input, DICTIONARY_NUM_BITS, DICTIONARY_SIZE);
 
-        // run other compressions
+        // run compressions
+        // for each uncompressed input line...
+        for (int line=0; line!=input.size(); ++line) {
+            // find the most efficient compression mechanism.
+            int bestMethodFormat = -1;
+            int bestMethodBitsUsed = Integer.MAX_VALUE;
+            int bestMethodLinesConsumed = 0;
+            String bestMethodOutput = "";
+            for (int compStratI = 0; compStratI != compStrategies.size(); ++compStratI) {
+                CompressionStrategy strategy = compStrategies.get(compStratI);
+                // TODO remove after every method is implemented
+                if (strategy == null) {
+                    continue;
+                }
+                CompressionResult result = strategy.compress(dict, input, line);
+                // if that particular strategy could not compress the input, skip it.
+                if (result == null) {
+                    continue;
+                }
+                int bitsUsed = strategy.getEncodingLength();
+                int linesConsumed = result.getLinesConsumed();
+                String compressedLine = result.getCompressedLine();
+                if (bitsUsed < bestMethodBitsUsed) {
+                    bestMethodFormat = compStratI;
+                    bestMethodBitsUsed = bitsUsed;
+                    bestMethodLinesConsumed = linesConsumed;
+                    bestMethodOutput = compressedLine;
+                }
+            }
+            // awesome! we found the best compression method.
+            outputBuilder.add()
+        }
 
-        // print out dictionary
+
+        // create final output, inc. dictionary
+        StringBuilder output = new StringBuilder();
+        output.append(outputBuilder.toString());
         output.append(DICTIONARY_SEPARATOR);
         output.append("\n");
         output.append(dict.toString());
@@ -147,11 +186,68 @@ class Formatter {
     }
 }
 
-class CompressionOutput {
-    List<String> uncompressedInstructions = new LinkedList<>();
-    List<String> compressedInstructions = new LinkedList<>();
-    public void add(String uncompressed, String compressed) {
 
+/* ======= Output Builders ======= */
+
+class CompressionOutputBuilder {
+    //private List<String> uncompressedInstructions = new LinkedList<>();
+    private final List<String> compressedInstructions = new LinkedList<>();
+    private final int FORMAT_BITS;
+    private final int OUTPUT_WIDTH;
+    private final boolean DEBUG_OUT; // creates a line after every instruction instead of every OUTPUT_WIDTH bits
+
+    CompressionOutputBuilder(int formatBits, int outputWidth, boolean debugOut) {
+        this.FORMAT_BITS = formatBits;
+        this.OUTPUT_WIDTH = outputWidth;
+        this.DEBUG_OUT = debugOut;
+    }
+    public void add(int format, String compressedLine) {
+        String toAdd = Formatter.genBinaryString(format, FORMAT_BITS) + compressedLine;
+        compressedInstructions.add(toAdd);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (DEBUG_OUT) {
+            for (String instruction : compressedInstructions) {
+                sb.append(instruction);
+                sb.append("\n");
+            }
+        } else {
+            // will hold giant list of the instructions with no spacing
+            StringBuilder temp = new StringBuilder();
+            for (String instruction : compressedInstructions) {
+                temp.append(instruction);
+            }
+            // now split by OUTPUT_WIDTH
+            int index = 0;
+            while (index < temp.length()) {
+                sb.append(temp.substring(index, Math.min(index + 4,temp.length())));
+                sb.append("\n");
+                index += OUTPUT_WIDTH;
+            }
+        }
+        return sb.toString();
+    }
+}
+
+class DecompressionOutputBuilder {
+    List<String> instructions = new LinkedList<>();
+    public void add(String instruction) {
+        instructions.add(instruction);
+    }
+    public String previousInstruction() {
+        return instructions.get(instructions.size()-1);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(String instruction : instructions) {
+            sb.append(instruction);
+        }
+        return sb.toString();
     }
 }
 
@@ -164,9 +260,6 @@ class CompressionResult {
         this.compressedLine = compressedLine;
     }
 
-    public int getBitsUsed() {
-        return compressedLine.length();
-    }
     public int getLinesConsumed() {
         return linesConsumed;
     }
@@ -178,6 +271,27 @@ class CompressionResult {
 interface CompressionStrategy {
     int getEncodingLength();
     CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress);
+    void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String lineToDecompress);
+}
+
+class OriginalBinaryEncodingStrategy implements CompressionStrategy {
+
+    private static final int ENCODING_LEN = 32;
+
+    @Override
+    public int getEncodingLength() {
+        return ENCODING_LEN;
+    }
+
+    @Override
+    public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
+        return new CompressionResult(input.getLine(inputToCompress), 1);
+    }
+
+    @Override
+    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String lineToDecompress) {
+        outputBuilder.add(lineToDecompress);
+    }
 }
 
 class RunLengthEncodingStrategy implements CompressionStrategy {
@@ -215,6 +329,18 @@ class RunLengthEncodingStrategy implements CompressionStrategy {
         int linesConsumed = lookAheadCount + 1;
         String output = Formatter.genBinaryString(lookAheadCount, LEN_ENCODING);
         return new CompressionResult(output, linesConsumed);
+    }
+
+    @Override
+    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String lineToDecompress) {
+        // parse the number of times to repeat (+1 due to zero indexing)
+        final int timesToRepeat = Integer.parseInt(lineToDecompress, 2) + 1;
+        // get prev val to duplicate
+        String toDupe = outputBuilder.previousInstruction();
+        // remove item at index
+        for (int i = 0; i != timesToRepeat; ++i) {
+            outputBuilder.add(toDupe);
+        }
     }
 
     @Override
@@ -442,6 +568,7 @@ class DecompressionInput {
     public String getRawDict(int i) {
         return dictList.get(i);
     }
+
     public int rawDictSize() {
         return dictList.size();
     }
@@ -463,9 +590,10 @@ class DecompressionInput {
             // parse the bits (in binary) needed for this section
             String formatStr = compdText.substring(currPos, currPos + formatBits);
             final int format = Integer.parseInt(formatStr, 2);
+            // disregard the format bits
             currPos += formatBits;
             // since the strategy orders are 1 to 1 with the format
-            EncodingStrategy strategy = strategies.get(format);
+            CompressionStrategy strategy = strategies.get(format);
             // get the length of the encoding so we can separate it properly
             final int encodingLen = strategy.getEncodingLength();
             // make sure that the encoding len is in bounds
