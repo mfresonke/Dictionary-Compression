@@ -20,12 +20,9 @@ public class SIM {
     private static final String FLAG_COMPRESS = "1";
     private static final String FLAG_DECOMPRESS = "2";
     private static final int SIZE_DICTIONARY = 16;
+    private static final String SEPARATOR_DICT = "xxxx";
 
     public static void main(String[] args) {
-
-        //DEBUG
-        System.out.println("num args: " + args.length);
-        //END DEBUG
 
         // Parse Input Args
         if (args.length != 1) {
@@ -33,13 +30,14 @@ public class SIM {
             System.exit(2);
         }
 
-        String compOrDecompArg = args[0];
+        final String compOrDecompArg = args[0];
+        String output = "";
 
         try {
             if (compOrDecompArg.equals(FLAG_COMPRESS)) {
-                runCompression(FILENAME_COMPRESSION_INPUT, FILENAME_COMPRESSION_OUTPUT);
+                output = runCompression(FILENAME_COMPRESSION_INPUT, SIZE_DICTIONARY, SEPARATOR_DICT);
             } else if (compOrDecompArg.equals(FLAG_DECOMPRESS)) {
-                runDecompression(FILENAME_DECOMPRESSION_INPUT, FILENAME_DECOMPRESSION_OUTPUT);
+                output = runDecompression(FILENAME_DECOMPRESSION_INPUT);
             } else {
                 System.err.println("Error, unrecognized argument '"+compOrDecompArg+"'.");
                 System.exit(4);
@@ -48,33 +46,137 @@ public class SIM {
             e.printStackTrace();
             System.exit(3);
         }
+
+        // TODO Write to file
+        //DEBUG
+        System.out.println(output);
+        //END DEBUG
     }
 
-    private static void runCompression(String input, String output) throws IOException {
+    private static String runCompression(String inputFilename, int dictSize, String dictSeparator) throws IOException {
+        StringBuilder output = new StringBuilder();
+
         // Parse Input File
-        InputFile inputFile = new InputFile(input);
+        CompressionInput inputFile = new CompressionInput(inputFilename);
 
         // Run a pass over time file counting the number of occurances of a given binary.
-        Dictionary dict = new Dictionary(inputFile, SIZE_DICTIONARY);
+        Dictionary dict = new Dictionary(inputFile, dictSize);
 
-        //DEBUG
-        System.out.println(dict.toString());
-        //END DEBUG
+        // run other compressions
 
+        // print out dictionary
+        output.append(dictSeparator);
+        output.append("\n");
+        output.append(dict.toString());
 
-        // Get the top 12, preserving order.
-
-        // other stuff ;)
+        return output.toString();
     }
 
-    private static void runDecompression(String input, String output) {
-
+    private static String runDecompression(String input) {
+        return null;
     }
 
 }
 
+class Formatter {
+    /**
+     * Generates a binary string with the specified number of bits
+     * @param num
+     * @param numBits
+     * @return
+     */
+    public static String genBinaryString(int num, int numBits) {
+        String raw = Integer.toBinaryString(num);
+        if (raw.length() > numBits) {
+            throw new IllegalStateException("num greater than number bits");
+        } else if (raw.length() == numBits) {
+            return raw;
+        }
+        StringBuilder sb = new StringBuilder(numBits);
+        int zerosNeeded = numBits - raw.length();
+        for (int i=0; i!=zerosNeeded; ++i) {
+            sb.append("0");
+        }
+        sb.append(raw);
+        return sb.toString();
+    }
+}
+
+class CompressionOutput {
+    List<String> uncompressedInstructions = new LinkedList<>();
+    List<String> compressedInstructions = new LinkedList<>();
+    public void add(String uncompressed, String compressed) {
+
+    }
+}
+
+class CompressionResult {
+    private int linesConsumed;
+    private String compressedLine;
+
+    public CompressionResult(String compressedLine, int linesConsumed) {
+        this.linesConsumed = linesConsumed;
+        this.compressedLine = compressedLine;
+    }
+
+    public int getBitsUsed() {
+        return compressedLine.length();
+    }
+    public int getLinesConsumed() {
+        return linesConsumed;
+    }
+    public String getCompressedLine() {
+        return compressedLine;
+    }
+}
+
+interface CompressionStrategy {
+    CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress);
+}
+
+class RunLengthEncodingStrategy implements CompressionStrategy {
+
+    private static final int LEN_ENCODING = 3;
+
+    @Override
+    public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
+        // if the index is zero, it means we can't possibly look back! Return null meaning "can't compress"
+        if (inputToCompress == 0) {
+            return null;
+        }
+        // next we want to check if this encoding strategy even applies.
+        // to do that, we look back on the previous line and determine whether
+        //  it matches the current one we are trying to compress.
+        String currLine = input.getLine(inputToCompress);
+        String lastLine = input.getLine(inputToCompress - 1);
+        // let's go ahead and eliminate the case where the input does __not__ match.
+        if (!lastLine.equals(currLine)) {
+            // RLE doesn't apply, so...
+            return null;
+        }
+        // ok cool! We're almost there. Now for the fun stuff!
+        // we need to look __ahead__ and see if any future lines
+        //  can also be compressed. Isn't RLE fun?! :D
+        int lookAheadCount = 0;
+        for (int i = inputToCompress + 1; i < input.size(); ++i) {
+            if (input.getLine(i).equals(currLine)) {
+                ++lookAheadCount;
+            } else {
+                break;
+            }
+        }
+        // lookAheadCount + 1 since this we must count the current line, too.
+        int linesConsumed = lookAheadCount + 1;
+        String output = Formatter.genBinaryString(lookAheadCount, LEN_ENCODING);
+        return new CompressionResult(output, linesConsumed);
+    }
+}
+
+
+/* Helper Types */
+
 class Dictionary {
-    private static final int NUM_BITS = 4;
+    private static final int NUM_BITS;
     List<String> instructions;
 
     // arbitrarily large number to help with sorting
@@ -143,15 +245,16 @@ class Dictionary {
      * @param input
      * @param dictionarySize
      */
-    public Dictionary(InputFile input, int dictionarySize) {
-        if (dictionarySize < 0 || dictionarySize > 16) {
+    public Dictionary(CompressionInput input, int numBits, int dictionarySize) {
+        NUM_BITS = numBits;
+        if (dictionarySize < 0 || dictionarySize > (int) Math.pow(2, NUM_BITS)) {
             throw new IllegalArgumentException("invalid dict size");
         }
         List <InstructionEntry> instructionEntries = sortInput(input);
         instructions = trimToSize(instructionEntries, dictionarySize);
     }
 
-    private static List<InstructionEntry> sortInput(InputFile input) {
+    private static List<InstructionEntry> sortInput(CompressionInput input) {
         Map<String, InstructionEntry> map = new HashMap<>();
         // get the count of all lines
         for(int i = 0; i!=input.size(); ++i) {
@@ -190,38 +293,20 @@ class Dictionary {
             if (i > 0) {
                 sb.append("\n");
             }
-//            sb.append(generateBinaryIndex(i, NUM_BITS));
-//            sb.append(" ");
             sb.append(instructions.get(i));
         }
-        return sb.toString();
-    }
-
-    private static String generateBinaryIndex(int num, int numBits) {
-        String raw = Integer.toBinaryString(num);
-        if (raw.length() > numBits) {
-            throw new IllegalStateException("num greater than number bits");
-        } else if (raw.length() == numBits) {
-            return raw;
-        }
-        StringBuilder sb = new StringBuilder(numBits);
-        int zerosNeeded = numBits - raw.length();
-        for (int i=0; i!=zerosNeeded; ++i) {
-            sb.append("0");
-        }
-        sb.append(raw);
         return sb.toString();
     }
 }
 
 /**
- * InputFile is a utility class that represents a file that has
+ * CompressionInput is a utility class that represents a file that has
  *  been normalized into an array of lines.
  */
-class InputFile implements Iterable<String> {
+class CompressionInput implements Iterable<String> {
 
     private List<String> lines;
-    public InputFile(String filename) throws IOException {
+    public CompressionInput(String filename) throws IOException {
         lines = Files.readAllLines(Paths.get(filename));
         // if there is an extra line, let's remove it.
         if (lines.get(lines.size()-1).equals("")) {
