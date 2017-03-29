@@ -17,12 +17,22 @@ public class SIM {
     private static final String FILENAME_COMPRESSION_OUTPUT = "cout.txt";
     private static final String FILENAME_DECOMPRESSION_INPUT = "compressed.txt";
     private static final String FILENAME_DECOMPRESSION_OUTPUT = "dout.txt";
+
     private static final String FLAG_COMPRESS = "1";
     private static final String FLAG_DECOMPRESS = "2";
-    private static final int SIZE_DICTIONARY = 16;
-    private static final String SEPARATOR_DICT = "xxxx";
 
-    public static void main(String[] args) {
+    private static final int FORMAT_BITS = 3; // num bits that denote the format (or strategy)
+
+    private static final int DICTIONARY_SIZE = 16;
+    private static final int DICTIONARY_NUM_BITS = 16;
+    private static final String DICTIONARY_SEPARATOR = "xxxx";
+
+    public static void main(String[] args) throws IOException {
+
+        // TODO don't use testing config
+        runTesting();
+
+        /*
 
         // Parse Input Args
         if (args.length != 1) {
@@ -33,11 +43,14 @@ public class SIM {
         final String compOrDecompArg = args[0];
         String output = "";
 
+
         try {
             if (compOrDecompArg.equals(FLAG_COMPRESS)) {
-                output = runCompression(FILENAME_COMPRESSION_INPUT, SIZE_DICTIONARY, SEPARATOR_DICT);
+                CompressionInput compIn = new CompressionInput(FILENAME_COMPRESSION_INPUT);
+                output = runCompression(compIn);
             } else if (compOrDecompArg.equals(FLAG_DECOMPRESS)) {
-                output = runDecompression(FILENAME_DECOMPRESSION_INPUT);
+                DecompressionInput decompIn = new DecompressionInput(FILENAME_DECOMPRESSION_INPUT,
+                output = runDecompression();
             } else {
                 System.err.println("Error, unrecognized argument '"+compOrDecompArg+"'.");
                 System.exit(4);
@@ -47,33 +60,65 @@ public class SIM {
             System.exit(3);
         }
 
+
         // TODO Write to file
         //DEBUG
         System.out.println(output);
         //END DEBUG
+
+        */
     }
 
-    private static String runCompression(String inputFilename, int dictSize, String dictSeparator) throws IOException {
+    private static void runTesting() throws IOException {
+
+        List<CompressionStrategy> compStrategies = Arrays.asList(
+                null,   // Original Binary
+                new RunLengthEncodingStrategy(),
+                null,   // Bitmask-Based Compression
+                null,   // 1-bit Mismatch
+                null,   // 2-bit consecutive mismatch
+                null,   // 4-bit consecutive mismatch
+                null,   // 2-bit anywhere mismatch
+                null    // directMatch
+        );
+
+        CompressionInput compIn = new CompressionInput(FILENAME_COMPRESSION_INPUT);
+        String compOut = runCompression(compIn);
+        System.out.println("=================== COMPRESSION OUT ===================");
+        System.out.println(compOut);
+        System.out.println("=================== END COMPRESSION OUT ===================");
+
+        String[] compOutLines = compOut.split("\n");
+        DecompressionInput decompIn = new DecompressionInput(Arrays.asList(compOutLines), compStrategies, DICTIONARY_SEPARATOR, FORMAT_BITS);
+        String decompOut = runDecompression;
+
+        System.out.println("=================== DECOMPRESSION OUT ===================");
+        System.out.println(decompOut);
+        System.out.println("=================== END DECOMPRESSION OUT ===================");
+    }
+
+    private static String runCompression(CompressionInput input) throws IOException {
         StringBuilder output = new StringBuilder();
 
-        // Parse Input File
-        CompressionInput inputFile = new CompressionInput(inputFilename);
-
         // Run a pass over time file counting the number of occurances of a given binary.
-        Dictionary dict = new Dictionary(inputFile, dictSize);
+        Dictionary dict = new Dictionary(input, DICTIONARY_NUM_BITS, DICTIONARY_SIZE);
 
         // run other compressions
 
         // print out dictionary
-        output.append(dictSeparator);
+        output.append(DICTIONARY_SEPARATOR);
         output.append("\n");
         output.append(dict.toString());
 
         return output.toString();
     }
 
-    private static String runDecompression(String input) {
-        return null;
+    private static String runDecompression(DecompressionInput input) {
+        StringBuilder output = new StringBuilder();
+
+        // Run a pass over time file counting the number of occurances of a given binary.
+        Dictionary dict = new Dictionary(input, DICTIONARY_NUM_BITS);
+        return output.toString();
     }
 
 }
@@ -88,7 +133,7 @@ class Formatter {
     public static String genBinaryString(int num, int numBits) {
         String raw = Integer.toBinaryString(num);
         if (raw.length() > numBits) {
-            throw new IllegalStateException("num greater than number bits");
+            throw new IllegalArgumentException("num greater than bits can hold");
         } else if (raw.length() == numBits) {
             return raw;
         }
@@ -131,6 +176,7 @@ class CompressionResult {
 }
 
 interface CompressionStrategy {
+    int getEncodingLength();
     CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress);
 }
 
@@ -170,14 +216,19 @@ class RunLengthEncodingStrategy implements CompressionStrategy {
         String output = Formatter.genBinaryString(lookAheadCount, LEN_ENCODING);
         return new CompressionResult(output, linesConsumed);
     }
+
+    @Override
+    public int getEncodingLength() {
+        return LEN_ENCODING;
+    }
 }
 
 
 /* Helper Types */
 
 class Dictionary {
-    private static final int NUM_BITS;
-    List<String> instructions;
+    private final int NUM_BITS;
+    final List<String> instructions;
 
     // arbitrarily large number to help with sorting
     private static final int MAX_ENTRIES = 10000;
@@ -241,7 +292,23 @@ class Dictionary {
     }
 
     /**
-     * Constructor for
+     * Constructor for when decompressing an already existing dictionary
+     * @param input
+     * @param numBits
+     */
+    public Dictionary(DecompressionInput input, int numBits) {
+        NUM_BITS = numBits;
+        if (input.rawDictSize() < 0 || input.rawDictSize() > (int) Math.pow(2, NUM_BITS)) {
+            throw new IllegalArgumentException("invalid dict size");
+        }
+        instructions = new ArrayList<>(input.rawDictSize());
+        for (int i = 0; i!=input.rawDictSize(); ++i) {
+            instructions.add(input.getRawDict(i));
+        }
+    }
+
+    /**
+     * Constructor for when compressing an input file
      * @param input
      * @param dictionarySize
      */
@@ -338,5 +405,83 @@ class CompressionInput implements Iterable<String> {
                 return iter.next();
             }
         };
+    }
+}
+
+/**
+ * DecompressionInput is a utility class that takes in a decompression output
+ *  and automatically segments it by instruction.
+ */
+class DecompressionInput {
+    private final List<String> dictList;
+    private final List<String> compressedInstructions;
+
+    public DecompressionInput(List<String> compressedLines, List<CompressionStrategy> strategies, String dictSep, int formatBits) {
+        // now it's time to concat those lines into a single string
+        StringBuilder giantString = new StringBuilder();
+        // will represent the starting index of the dict index
+        int dictIndex = 0;
+        // run the concat loop until we hit the dictionary
+        for (String line : compressedLines) {
+            if (line.equals(dictSep)) {
+                break;
+            }
+            giantString.append(line);
+            ++dictIndex;
+        }
+        // go ahead and assign the dict since we are done with processing it
+        // the dictionary starts one past the separator, which is why we add one.
+        dictList = compressedLines.subList(dictIndex + 1, compressedLines.size());
+        compressedInstructions = separateInstructions(strategies, giantString.toString(), formatBits);
+    }
+
+    public DecompressionInput(String filename, List<CompressionStrategy> strategies, String dictSep, int formatBits) throws IOException {
+        this(Files.readAllLines(Paths.get(filename)), strategies, dictSep, formatBits);
+    }
+
+    public String getRawDict(int i) {
+        return dictList.get(i);
+    }
+    public int rawDictSize() {
+        return dictList.size();
+    }
+
+    public String getCmpdInstruction(int i) {
+        return compressedInstructions.get(i);
+    }
+    public int cmpdInstrucionSize() {
+        return compressedInstructions.size();
+    }
+
+    private static List<String> separateInstructions(List<CompressionStrategy> strategies, String compdText, int formatBits) {
+        // List to hold separated compressed instructions.
+        List<String> compdInstructs = new ArrayList<>();
+        // holds current position in giganto string
+        int currPos = 0;
+
+        while (currPos + formatBits < compdText.length()) {
+            // parse the bits (in binary) needed for this section
+            String formatStr = compdText.substring(currPos, currPos + formatBits);
+            final int format = Integer.parseInt(formatStr, 2);
+            currPos += formatBits;
+            // since the strategy orders are 1 to 1 with the format
+            EncodingStrategy strategy = strategies.get(format);
+            // get the length of the encoding so we can separate it properly
+            final int encodingLen = strategy.getEncodingLength();
+            // make sure that the encoding len is in bounds
+            // (can happen due to padding)
+            if (currPos + encodingLen < compdText.length()) {
+                // since padding should only be zeros, there is something wrong if the format is
+                // not.
+                if (format != 0) {
+                    throw new IllegalStateException("unexpected nonzero format during padding processing");
+                }
+                break;
+            }
+            String cmpdInstruction = compdText.substring(currPos, currPos + encodingLen);
+            compdInstructs.add(cmpdInstruction);
+            currPos += encodingLen;
+        }
+        return compdInstructs;
     }
 }
