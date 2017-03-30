@@ -32,13 +32,16 @@ public class SIM {
     private static final int DICTIONARY_NUM_BITS = 4;
     private static final String DICTIONARY_SEPARATOR = "xxxx";
 
+    private static final int BITMASK_BITMASK_SIZE = 4;
+    private static final int BITMASK_STARTING_LOC_SIZE = 5;
+
     public static void main(String[] args) throws IOException {
 
         // Compression strategies in order of priority
         List<CompressionStrategy> compStrategies = Arrays.asList(
                 new OriginalBinaryEncodingStrategy(),
                 new RunLengthEncodingStrategy(),
-                null,   // Bitmask-Based Compression
+                new BitmaskBasedEncodingStrategy(DICTIONARY_NUM_BITS, BITMASK_BITMASK_SIZE, BITMASK_STARTING_LOC_SIZE),   // Bitmask-Based Compression
                 null,   // 1-bit Mismatch
                 null,   // 2-bit consecutive mismatch
                 null,   // 4-bit consecutive mismatch
@@ -315,6 +318,89 @@ class DirectMatchEncodingStrategy implements CompressionStrategy {
     }
 }
 
+class BitmaskBasedEncodingStrategy implements CompressionStrategy {
+
+    private final int DICT_INDEX_SIZE;
+    private final int BITMASK_SIZE;
+    private final int STARTING_LOC_SIZE;
+
+    private final int DICT_INDEX_MAX_VAL;
+    private final int BITMASK_MAX_VAL;
+    private final int STARTING_LOC_MAX_VAL;
+
+    public BitmaskBasedEncodingStrategy(int dictNumBits, int bitmaskSize, int startingLocSize) {
+        this.DICT_INDEX_SIZE = dictNumBits;
+        this.BITMASK_SIZE = bitmaskSize;
+        this.STARTING_LOC_SIZE = startingLocSize;
+
+        DICT_INDEX_MAX_VAL = maxSizeForBin(DICT_INDEX_SIZE);
+        BITMASK_MAX_VAL = maxSizeForBin(BITMASK_SIZE);
+        STARTING_LOC_MAX_VAL = maxSizeForBin(STARTING_LOC_SIZE);
+    }
+
+    private static int maxSizeForBin(int numBits) {
+        return (int) Math.pow(2, numBits) - 1;
+    }
+
+    @Override
+    public int getEncodingLength() {
+        return DICT_INDEX_SIZE + BITMASK_SIZE + STARTING_LOC_SIZE;
+    }
+
+    @Override
+    public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
+        String toCompress = input.getLine(inputToCompress);
+
+        // let's brute force this bi'!
+        // for every dictionary entry...
+        for(int dictEntryI = 0; dictEntryI != dict.size(); ++dictEntryI) {
+            String dictStr = dict.get(dictEntryI);
+            // for every bitmask... (starting from the top to ensure that 1 is always at its leftmost position)
+            for (int bitmask = BITMASK_MAX_VAL; bitmask != 0; --bitmask) {
+                final String bitMaskStr = Formatter.genBinaryString(bitmask, BITMASK_SIZE);
+                // for every possible starting location... (making sure to account for ones past the string)
+                for(int location = 0; location < (dictStr.length() - BITMASK_SIZE); ++location) {
+                    // perform manipulation
+                    char dictChars[] = dictStr.toCharArray();
+                    char bitmaskChars[] = bitMaskStr.toCharArray();
+                    for (int bitmaskI = 0; bitmaskI != BITMASK_SIZE; ++bitmaskI) {
+                        final int dictI = bitmaskI + location;
+                        // if the bitmask says to flip...
+                        if (bitmaskChars[bitmaskI] == '1') {
+                            // flip the bit in the opposite of what it currently is.
+                            if (dictChars[dictI] == '1') {
+                                dictChars[dictI] = '0';
+                            } else if (dictChars[dictI] == '0') {
+                                dictChars[dictI] = '1';
+                            } else {
+                                throw new IllegalStateException("somehow we're dealing with more than ones and zeros");
+                            }
+                        }
+                    }
+                    // now let's check to see if the flip is a match
+                    String flippedEntry = new String(dictChars);
+                    if (flippedEntry.equals(toCompress)) {
+                        // WE'RE DONE!!!! WOOOOOOO... ok not really yet...
+                        // build up our string rep
+                        String bitRep =
+                                Formatter.genBinaryString(location, STARTING_LOC_SIZE) +
+                                        Formatter.genBinaryString(bitmask, BITMASK_SIZE) +
+                                        Formatter.genBinaryString(dictEntryI, DICT_INDEX_SIZE);
+
+                        return new CompressionResult(bitRep);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String lineToDecompress) {
+        throw new UnsupportedOperationException("sigh");
+    }
+}
+
 /* ======= Helper Types ======= */
 
 class Dictionary {
@@ -453,7 +539,7 @@ class Dictionary {
         return instructions.indexOf(instruction);
     }
 
-    private String get(int i) {
+    public String get(int i) {
         return instructions.get(i);
     }
 
