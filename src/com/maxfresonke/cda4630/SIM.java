@@ -14,7 +14,7 @@ import java.util.*;
 
 public class SIM {
     /* Debug Settings */
-    private static final boolean DEBUG_OUT = true;
+    private static final boolean IS_TESTING = false;
 
     /* Helper Constants */
     private static final String FILENAME_COMPRESSION_INPUT = "original.txt";
@@ -49,11 +49,19 @@ public class SIM {
                 new DirectMatchEncodingStrategy(DICTIONARY_NUM_BITS)
         );
 
-        // TODO don't use testing config
-        runTesting(compStrategies);
+        if (IS_TESTING) {
+            runTesting(compStrategies);
+        } else {
+            runProduction(compStrategies, args);
+        }
 
-        /*
+    }
 
+    private static void writeToFile(String filename, String output) throws FileNotFoundException {
+        try(PrintStream ps = new PrintStream(filename)) { ps.println(output); }
+    }
+
+    private static void runProduction(List<CompressionStrategy> compStrategies, String[] args) throws IOException {
         // Parse Input Args
         if (args.length != 1) {
             System.err.println("Please enter the correct number of arguments");
@@ -62,35 +70,22 @@ public class SIM {
 
         final String compOrDecompArg = args[0];
         String output = "";
+        String outputFilename = "";
 
-
-        try {
-            if (compOrDecompArg.equals(FLAG_COMPRESS)) {
-                CompressionInput compIn = new CompressionInput(FILENAME_COMPRESSION_INPUT);
-                output = runCompression(compIn);
-            } else if (compOrDecompArg.equals(FLAG_DECOMPRESS)) {
-                DecompressionInput decompIn = new DecompressionInput(FILENAME_DECOMPRESSION_INPUT,
-                output = runDecompression();
-            } else {
-                System.err.println("Error, unrecognized argument '"+compOrDecompArg+"'.");
-                System.exit(4);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(3);
+        if (compOrDecompArg.equals(FLAG_COMPRESS)) {
+            CompressionInput compIn = new CompressionInput(FILENAME_COMPRESSION_INPUT);
+            output = runCompression(compIn, compStrategies, false);
+            outputFilename = FILENAME_COMPRESSION_OUTPUT;
+        } else if (compOrDecompArg.equals(FLAG_DECOMPRESS)) {
+            DecompressionInput decompIn = new DecompressionInput(FILENAME_DECOMPRESSION_INPUT, compStrategies, DICTIONARY_SEPARATOR, FORMAT_BITS);
+            output = runDecompression(decompIn, compStrategies);
+            outputFilename = FILENAME_DECOMPRESSION_OUTPUT;
+        } else {
+            System.err.println("Error, unrecognized argument '"+compOrDecompArg+"'.");
+            System.exit(4);
         }
 
-
-        // TODO Write to file
-        //DEBUG
-        System.out.println(output);
-        //END DEBUG
-
-        */
-    }
-
-    private static void writeToFile(String filename, String output) throws FileNotFoundException {
-        try(PrintStream ps = new PrintStream(filename)) { ps.println(output); }
+        writeToFile(outputFilename, output);
     }
 
     private static void runTesting(List<CompressionStrategy> compStrategies) throws IOException {

@@ -29,24 +29,23 @@
       <file leaf-file-name="SIM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="403" column="34" selection-start-line="403" selection-start-column="34" selection-end-line="403" selection-end-column="34" />
+            <state relative-caret-position="-358">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-                <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
                 <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
                 <element signature="class#CompressionStrategy#0" expanded="false" />
                 <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-                <element signature="e#8321#8322#0" expanded="true" />
-                <element signature="e#8356#8357#0" expanded="true" />
+                <element signature="e#8522#8523#0" expanded="true" />
+                <element signature="e#8557#8558#0" expanded="true" />
                 <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
                 <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
                 <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-                <element signature="e#13282#13283#0" expanded="true" />
-                <element signature="e#13335#13336#0" expanded="true" />
-                <element signature="e#13387#13388#0" expanded="true" />
-                <element signature="e#13460#13461#0" expanded="true" />
+                <element signature="e#13483#13484#0" expanded="true" />
+                <element signature="e#13536#13537#0" expanded="true" />
+                <element signature="e#13588#13589#0" expanded="true" />
+                <element signature="e#13661#13662#0" expanded="true" />
                 <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
                 <element signature="class#Dictionary#0" expanded="false" />
                 <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -60,8 +59,8 @@
                 <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
                 <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
                 <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-                <element signature="e#20751#20752#0" expanded="true" />
-                <element signature="e#20793#20794#0" expanded="true" />
+                <element signature="e#20952#20953#0" expanded="true" />
+                <element signature="e#20994#20995#0" expanded="true" />
                 <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
                 <element signature="class#Formatter#0" expanded="false" />
                 <element signature="class#CompressionResult#0" expanded="false" />
@@ -69,23 +68,23 @@
                 <element signature="class#CompressionInput#0" expanded="false" />
                 <element signature="docComment;class#DecompressionInput#0" expanded="false" />
                 <element signature="class#DecompressionInput#0" expanded="false" />
-                <element signature="e#25192#25193#0" expanded="true" />
-                <element signature="e#25230#25231#0" expanded="true" />
-                <element signature="e#25262#25263#0" expanded="true" />
-                <element signature="e#25300#25301#0" expanded="true" />
-                <element signature="e#25347#25348#0" expanded="true" />
-                <element signature="e#25399#25400#0" expanded="true" />
-                <element signature="e#25438#25439#0" expanded="true" />
-                <element signature="e#25478#25479#0" expanded="true" />
-                <element signature="e#25517#25518#0" expanded="true" />
-                <element signature="e#25569#25570#0" expanded="true" />
+                <element signature="e#25393#25394#0" expanded="true" />
+                <element signature="e#25431#25432#0" expanded="true" />
+                <element signature="e#25463#25464#0" expanded="true" />
+                <element signature="e#25501#25502#0" expanded="true" />
+                <element signature="e#25548#25549#0" expanded="true" />
+                <element signature="e#25600#25601#0" expanded="true" />
+                <element signature="e#25639#25640#0" expanded="true" />
+                <element signature="e#25679#25680#0" expanded="true" />
+                <element signature="e#25718#25719#0" expanded="true" />
+                <element signature="e#25770#25771#0" expanded="true" />
                 <element signature="class#CompressionOutputBuilder#0" expanded="false" />
                 <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-                <element signature="e#29273#29274#0" expanded="true" />
-                <element signature="e#29318#29319#0" expanded="true" />
-                <element signature="e#29360#29361#0" expanded="true" />
-                <element signature="e#29422#29423#0" expanded="true" />
-                <marker date="1490840609000" expanded="false" signature="22369:22466" ph="{...}" />
+                <element signature="e#29474#29475#0" expanded="true" />
+                <element signature="e#29519#29520#0" expanded="true" />
+                <element signature="e#29561#29562#0" expanded="true" />
+                <element signature="e#29623#29624#0" expanded="true" />
+                <marker date="1490841122000" expanded="false" signature="22570:22667" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -487,19 +486,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java</url>
-          <line>174</line>
+          <line>169</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java</url>
-          <line>723</line>
+          <line>718</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java</url>
-          <line>186</line>
+          <line>181</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -520,19 +519,18 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
             <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
             <element signature="class#CompressionStrategy#0" expanded="false" />
             <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8321#8322#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
             <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="e#13282#13283#0" expanded="true" />
-            <element signature="e#13335#13336#0" expanded="true" />
-            <element signature="e#13387#13388#0" expanded="true" />
-            <element signature="e#13460#13461#0" expanded="true" />
+            <element signature="e#13483#13484#0" expanded="true" />
+            <element signature="e#13536#13537#0" expanded="true" />
+            <element signature="e#13588#13589#0" expanded="true" />
+            <element signature="e#13661#13662#0" expanded="true" />
             <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
             <element signature="class#Dictionary#0" expanded="false" />
             <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -546,8 +544,8 @@
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
             <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#20751#20752#0" expanded="true" />
-            <element signature="e#20793#20794#0" expanded="true" />
+            <element signature="e#20952#20953#0" expanded="true" />
+            <element signature="e#20994#20995#0" expanded="true" />
             <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#Formatter#0" expanded="false" />
             <element signature="class#CompressionResult#0" expanded="false" />
@@ -555,23 +553,23 @@
             <element signature="class#CompressionInput#0" expanded="false" />
             <element signature="docComment;class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#25192#25193#0" expanded="true" />
-            <element signature="e#25230#25231#0" expanded="true" />
-            <element signature="e#25262#25263#0" expanded="true" />
-            <element signature="e#25300#25301#0" expanded="true" />
-            <element signature="e#25347#25348#0" expanded="true" />
-            <element signature="e#25399#25400#0" expanded="true" />
-            <element signature="e#25438#25439#0" expanded="true" />
-            <element signature="e#25478#25479#0" expanded="true" />
-            <element signature="e#25517#25518#0" expanded="true" />
-            <element signature="e#25569#25570#0" expanded="true" />
+            <element signature="e#25393#25394#0" expanded="true" />
+            <element signature="e#25431#25432#0" expanded="true" />
+            <element signature="e#25463#25464#0" expanded="true" />
+            <element signature="e#25501#25502#0" expanded="true" />
+            <element signature="e#25548#25549#0" expanded="true" />
+            <element signature="e#25600#25601#0" expanded="true" />
+            <element signature="e#25639#25640#0" expanded="true" />
+            <element signature="e#25679#25680#0" expanded="true" />
+            <element signature="e#25718#25719#0" expanded="true" />
+            <element signature="e#25770#25771#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#29273#29274#0" expanded="true" />
-            <element signature="e#29318#29319#0" expanded="true" />
-            <element signature="e#29360#29361#0" expanded="true" />
-            <element signature="e#29422#29423#0" expanded="true" />
-            <marker date="1490840609000" expanded="false" signature="22369:22466" ph="{...}" />
+            <element signature="e#29474#29475#0" expanded="true" />
+            <element signature="e#29519#29520#0" expanded="true" />
+            <element signature="e#29561#29562#0" expanded="true" />
+            <element signature="e#29623#29624#0" expanded="true" />
+            <marker date="1490841122000" expanded="false" signature="22570:22667" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -583,19 +581,18 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
             <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
             <element signature="class#CompressionStrategy#0" expanded="false" />
             <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8321#8322#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
             <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="e#13282#13283#0" expanded="true" />
-            <element signature="e#13335#13336#0" expanded="true" />
-            <element signature="e#13387#13388#0" expanded="true" />
-            <element signature="e#13460#13461#0" expanded="true" />
+            <element signature="e#13483#13484#0" expanded="true" />
+            <element signature="e#13536#13537#0" expanded="true" />
+            <element signature="e#13588#13589#0" expanded="true" />
+            <element signature="e#13661#13662#0" expanded="true" />
             <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
             <element signature="class#Dictionary#0" expanded="false" />
             <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -609,8 +606,8 @@
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
             <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#20751#20752#0" expanded="true" />
-            <element signature="e#20793#20794#0" expanded="true" />
+            <element signature="e#20952#20953#0" expanded="true" />
+            <element signature="e#20994#20995#0" expanded="true" />
             <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#Formatter#0" expanded="false" />
             <element signature="class#CompressionResult#0" expanded="false" />
@@ -618,23 +615,23 @@
             <element signature="class#CompressionInput#0" expanded="false" />
             <element signature="docComment;class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#25192#25193#0" expanded="true" />
-            <element signature="e#25230#25231#0" expanded="true" />
-            <element signature="e#25262#25263#0" expanded="true" />
-            <element signature="e#25300#25301#0" expanded="true" />
-            <element signature="e#25347#25348#0" expanded="true" />
-            <element signature="e#25399#25400#0" expanded="true" />
-            <element signature="e#25438#25439#0" expanded="true" />
-            <element signature="e#25478#25479#0" expanded="true" />
-            <element signature="e#25517#25518#0" expanded="true" />
-            <element signature="e#25569#25570#0" expanded="true" />
+            <element signature="e#25393#25394#0" expanded="true" />
+            <element signature="e#25431#25432#0" expanded="true" />
+            <element signature="e#25463#25464#0" expanded="true" />
+            <element signature="e#25501#25502#0" expanded="true" />
+            <element signature="e#25548#25549#0" expanded="true" />
+            <element signature="e#25600#25601#0" expanded="true" />
+            <element signature="e#25639#25640#0" expanded="true" />
+            <element signature="e#25679#25680#0" expanded="true" />
+            <element signature="e#25718#25719#0" expanded="true" />
+            <element signature="e#25770#25771#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#29273#29274#0" expanded="true" />
-            <element signature="e#29318#29319#0" expanded="true" />
-            <element signature="e#29360#29361#0" expanded="true" />
-            <element signature="e#29422#29423#0" expanded="true" />
-            <marker date="1490840609000" expanded="false" signature="22369:22466" ph="{...}" />
+            <element signature="e#29474#29475#0" expanded="true" />
+            <element signature="e#29519#29520#0" expanded="true" />
+            <element signature="e#29561#29562#0" expanded="true" />
+            <element signature="e#29623#29624#0" expanded="true" />
+            <marker date="1490841122000" expanded="false" signature="22570:22667" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -646,19 +643,18 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
             <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
             <element signature="class#CompressionStrategy#0" expanded="false" />
             <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8321#8322#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
             <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="e#13282#13283#0" expanded="true" />
-            <element signature="e#13335#13336#0" expanded="true" />
-            <element signature="e#13387#13388#0" expanded="true" />
-            <element signature="e#13460#13461#0" expanded="true" />
+            <element signature="e#13483#13484#0" expanded="true" />
+            <element signature="e#13536#13537#0" expanded="true" />
+            <element signature="e#13588#13589#0" expanded="true" />
+            <element signature="e#13661#13662#0" expanded="true" />
             <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
             <element signature="class#Dictionary#0" expanded="false" />
             <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -672,8 +668,8 @@
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
             <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#20751#20752#0" expanded="true" />
-            <element signature="e#20793#20794#0" expanded="true" />
+            <element signature="e#20952#20953#0" expanded="true" />
+            <element signature="e#20994#20995#0" expanded="true" />
             <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#Formatter#0" expanded="false" />
             <element signature="class#CompressionResult#0" expanded="false" />
@@ -681,23 +677,23 @@
             <element signature="class#CompressionInput#0" expanded="false" />
             <element signature="docComment;class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#25192#25193#0" expanded="true" />
-            <element signature="e#25230#25231#0" expanded="true" />
-            <element signature="e#25262#25263#0" expanded="true" />
-            <element signature="e#25300#25301#0" expanded="true" />
-            <element signature="e#25347#25348#0" expanded="true" />
-            <element signature="e#25399#25400#0" expanded="true" />
-            <element signature="e#25438#25439#0" expanded="true" />
-            <element signature="e#25478#25479#0" expanded="true" />
-            <element signature="e#25517#25518#0" expanded="true" />
-            <element signature="e#25569#25570#0" expanded="true" />
+            <element signature="e#25393#25394#0" expanded="true" />
+            <element signature="e#25431#25432#0" expanded="true" />
+            <element signature="e#25463#25464#0" expanded="true" />
+            <element signature="e#25501#25502#0" expanded="true" />
+            <element signature="e#25548#25549#0" expanded="true" />
+            <element signature="e#25600#25601#0" expanded="true" />
+            <element signature="e#25639#25640#0" expanded="true" />
+            <element signature="e#25679#25680#0" expanded="true" />
+            <element signature="e#25718#25719#0" expanded="true" />
+            <element signature="e#25770#25771#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#29273#29274#0" expanded="true" />
-            <element signature="e#29318#29319#0" expanded="true" />
-            <element signature="e#29360#29361#0" expanded="true" />
-            <element signature="e#29422#29423#0" expanded="true" />
-            <marker date="1490840609000" expanded="false" signature="22369:22466" ph="{...}" />
+            <element signature="e#29474#29475#0" expanded="true" />
+            <element signature="e#29519#29520#0" expanded="true" />
+            <element signature="e#29561#29562#0" expanded="true" />
+            <element signature="e#29623#29624#0" expanded="true" />
+            <marker date="1490841122000" expanded="false" signature="22570:22667" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -709,19 +705,18 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
             <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
             <element signature="class#CompressionStrategy#0" expanded="false" />
             <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8321#8322#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
             <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="e#13282#13283#0" expanded="true" />
-            <element signature="e#13335#13336#0" expanded="true" />
-            <element signature="e#13387#13388#0" expanded="true" />
-            <element signature="e#13460#13461#0" expanded="true" />
+            <element signature="e#13483#13484#0" expanded="true" />
+            <element signature="e#13536#13537#0" expanded="true" />
+            <element signature="e#13588#13589#0" expanded="true" />
+            <element signature="e#13661#13662#0" expanded="true" />
             <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
             <element signature="class#Dictionary#0" expanded="false" />
             <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -735,8 +730,8 @@
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
             <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#20751#20752#0" expanded="true" />
-            <element signature="e#20793#20794#0" expanded="true" />
+            <element signature="e#20952#20953#0" expanded="true" />
+            <element signature="e#20994#20995#0" expanded="true" />
             <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#Formatter#0" expanded="false" />
             <element signature="class#CompressionResult#0" expanded="false" />
@@ -744,47 +739,46 @@
             <element signature="class#CompressionInput#0" expanded="false" />
             <element signature="docComment;class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#25192#25193#0" expanded="true" />
-            <element signature="e#25230#25231#0" expanded="true" />
-            <element signature="e#25262#25263#0" expanded="true" />
-            <element signature="e#25300#25301#0" expanded="true" />
-            <element signature="e#25347#25348#0" expanded="true" />
-            <element signature="e#25399#25400#0" expanded="true" />
-            <element signature="e#25438#25439#0" expanded="true" />
-            <element signature="e#25478#25479#0" expanded="true" />
-            <element signature="e#25517#25518#0" expanded="true" />
-            <element signature="e#25569#25570#0" expanded="true" />
+            <element signature="e#25393#25394#0" expanded="true" />
+            <element signature="e#25431#25432#0" expanded="true" />
+            <element signature="e#25463#25464#0" expanded="true" />
+            <element signature="e#25501#25502#0" expanded="true" />
+            <element signature="e#25548#25549#0" expanded="true" />
+            <element signature="e#25600#25601#0" expanded="true" />
+            <element signature="e#25639#25640#0" expanded="true" />
+            <element signature="e#25679#25680#0" expanded="true" />
+            <element signature="e#25718#25719#0" expanded="true" />
+            <element signature="e#25770#25771#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#29273#29274#0" expanded="true" />
-            <element signature="e#29318#29319#0" expanded="true" />
-            <element signature="e#29360#29361#0" expanded="true" />
-            <element signature="e#29422#29423#0" expanded="true" />
-            <marker date="1490840609000" expanded="false" signature="22369:22466" ph="{...}" />
+            <element signature="e#29474#29475#0" expanded="true" />
+            <element signature="e#29519#29520#0" expanded="true" />
+            <element signature="e#29561#29562#0" expanded="true" />
+            <element signature="e#29623#29624#0" expanded="true" />
+            <marker date="1490841122000" expanded="false" signature="22570:22667" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="403" column="34" selection-start-line="403" selection-start-column="34" selection-end-line="403" selection-end-column="34" />
+        <state relative-caret-position="-358">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
             <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
             <element signature="class#CompressionStrategy#0" expanded="false" />
             <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8321#8322#0" expanded="true" />
-            <element signature="e#8356#8357#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8557#8558#0" expanded="true" />
             <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
             <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="e#13282#13283#0" expanded="true" />
-            <element signature="e#13335#13336#0" expanded="true" />
-            <element signature="e#13387#13388#0" expanded="true" />
-            <element signature="e#13460#13461#0" expanded="true" />
+            <element signature="e#13483#13484#0" expanded="true" />
+            <element signature="e#13536#13537#0" expanded="true" />
+            <element signature="e#13588#13589#0" expanded="true" />
+            <element signature="e#13661#13662#0" expanded="true" />
             <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
             <element signature="class#Dictionary#0" expanded="false" />
             <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
@@ -798,8 +792,8 @@
             <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
             <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
             <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#20751#20752#0" expanded="true" />
-            <element signature="e#20793#20794#0" expanded="true" />
+            <element signature="e#20952#20953#0" expanded="true" />
+            <element signature="e#20994#20995#0" expanded="true" />
             <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
             <element signature="class#Formatter#0" expanded="false" />
             <element signature="class#CompressionResult#0" expanded="false" />
@@ -807,23 +801,23 @@
             <element signature="class#CompressionInput#0" expanded="false" />
             <element signature="docComment;class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#25192#25193#0" expanded="true" />
-            <element signature="e#25230#25231#0" expanded="true" />
-            <element signature="e#25262#25263#0" expanded="true" />
-            <element signature="e#25300#25301#0" expanded="true" />
-            <element signature="e#25347#25348#0" expanded="true" />
-            <element signature="e#25399#25400#0" expanded="true" />
-            <element signature="e#25438#25439#0" expanded="true" />
-            <element signature="e#25478#25479#0" expanded="true" />
-            <element signature="e#25517#25518#0" expanded="true" />
-            <element signature="e#25569#25570#0" expanded="true" />
+            <element signature="e#25393#25394#0" expanded="true" />
+            <element signature="e#25431#25432#0" expanded="true" />
+            <element signature="e#25463#25464#0" expanded="true" />
+            <element signature="e#25501#25502#0" expanded="true" />
+            <element signature="e#25548#25549#0" expanded="true" />
+            <element signature="e#25600#25601#0" expanded="true" />
+            <element signature="e#25639#25640#0" expanded="true" />
+            <element signature="e#25679#25680#0" expanded="true" />
+            <element signature="e#25718#25719#0" expanded="true" />
+            <element signature="e#25770#25771#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#29273#29274#0" expanded="true" />
-            <element signature="e#29318#29319#0" expanded="true" />
-            <element signature="e#29360#29361#0" expanded="true" />
-            <element signature="e#29422#29423#0" expanded="true" />
-            <marker date="1490840609000" expanded="false" signature="22369:22466" ph="{...}" />
+            <element signature="e#29474#29475#0" expanded="true" />
+            <element signature="e#29519#29520#0" expanded="true" />
+            <element signature="e#29561#29562#0" expanded="true" />
+            <element signature="e#29623#29624#0" expanded="true" />
+            <marker date="1490841122000" expanded="false" signature="22570:22667" ph="{...}" />
           </folding>
         </state>
       </provider>
