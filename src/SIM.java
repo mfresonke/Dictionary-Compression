@@ -1,6 +1,3 @@
-package com.maxfresonke.cda4630;
-
-
 // Created by Maxwell Fresonke on 3/23/17
 // MIT Licensed
 // On my honor, I have neither given nor received unauthorized aid on this assignment
@@ -14,6 +11,7 @@ import java.util.*;
 
 public class SIM {
     /* Debug Settings */
+    // TODO Change to false for turning in
     private static final boolean IS_TESTING = false;
 
     /* Helper Constants */
@@ -42,9 +40,9 @@ public class SIM {
                 new OriginalBinaryEncodingStrategy(),
                 new RunLengthEncodingStrategy(),
                 new BitmaskBasedEncodingStrategy(DICTIONARY_NUM_BITS, BITMASK_BITMASK_SIZE, BITMASK_STARTING_LOC_SIZE),   // Bitmask-Based Compression
-                null,   // 1-bit Mismatch
-                null,   // 2-bit consecutive mismatch
-                null,   // 4-bit consecutive mismatch
+                new ConsecMismatchStrategy(1),   // 1-bit Mismatch
+                new ConsecMismatchStrategy(2),   // 2-bit consecutive mismatch
+                new ConsecMismatchStrategy(4),   // 4-bit consecutive mismatch
                 null,   // 2-bit anywhere mismatch
                 new DirectMatchEncodingStrategy(DICTIONARY_NUM_BITS)
         );
@@ -342,6 +340,29 @@ class BitmaskBasedEncodingStrategy implements CompressionStrategy {
         return DICT_INDEX_SIZE + BITMASK_SIZE + STARTING_LOC_SIZE;
     }
 
+    private String applyBitmask(String dictStr, int bitmask, int location) {
+        final String bitMaskStr = Formatter.genBinaryString(bitmask, BITMASK_SIZE);
+        // perform manipulation
+        char dictChars[] = dictStr.toCharArray();
+        char bitmaskChars[] = bitMaskStr.toCharArray();
+        for (int bitmaskI = 0; bitmaskI != BITMASK_SIZE; ++bitmaskI) {
+            final int dictI = bitmaskI + location;
+            // if the bitmask says to flip...
+            if (bitmaskChars[bitmaskI] == '1') {
+                // flip the bit in the opposite of what it currently is.
+                if (dictChars[dictI] == '1') {
+                    dictChars[dictI] = '0';
+                } else if (dictChars[dictI] == '0') {
+                    dictChars[dictI] = '1';
+                } else {
+                    throw new IllegalStateException("somehow we're dealing with more than ones and zeros");
+                }
+            }
+        }
+        // now let's check to see if the flip is a match
+        return new String(dictChars);
+    }
+
     @Override
     public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
         String toCompress = input.getLine(inputToCompress);
@@ -352,28 +373,9 @@ class BitmaskBasedEncodingStrategy implements CompressionStrategy {
             String dictStr = dict.get(dictEntryI);
             // for every bitmask... (starting from the top to ensure that 1 is always at its leftmost position)
             for (int bitmask = BITMASK_MAX_VAL; bitmask != 0; --bitmask) {
-                final String bitMaskStr = Formatter.genBinaryString(bitmask, BITMASK_SIZE);
                 // for every possible starting location... (making sure to account for ones past the string)
                 for(int location = 0; location < (dictStr.length() - BITMASK_SIZE); ++location) {
-                    // perform manipulation
-                    char dictChars[] = dictStr.toCharArray();
-                    char bitmaskChars[] = bitMaskStr.toCharArray();
-                    for (int bitmaskI = 0; bitmaskI != BITMASK_SIZE; ++bitmaskI) {
-                        final int dictI = bitmaskI + location;
-                        // if the bitmask says to flip...
-                        if (bitmaskChars[bitmaskI] == '1') {
-                            // flip the bit in the opposite of what it currently is.
-                            if (dictChars[dictI] == '1') {
-                                dictChars[dictI] = '0';
-                            } else if (dictChars[dictI] == '0') {
-                                dictChars[dictI] = '1';
-                            } else {
-                                throw new IllegalStateException("somehow we're dealing with more than ones and zeros");
-                            }
-                        }
-                    }
-                    // now let's check to see if the flip is a match
-                    String flippedEntry = new String(dictChars);
+                    String flippedEntry = applyBitmask(dictStr, bitmask, location);
                     if (flippedEntry.equals(toCompress)) {
                         // WE'RE DONE!!!! WOOOOOOO... ok not really yet...
                         // build up our string rep
@@ -391,8 +393,83 @@ class BitmaskBasedEncodingStrategy implements CompressionStrategy {
     }
 
     @Override
-    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String lineToDecompress) {
-        throw new UnsupportedOperationException("sigh");
+    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String toDecomp) {
+        int start = 0;
+        String locationStr = toDecomp.substring(start, start+STARTING_LOC_SIZE);
+        start += STARTING_LOC_SIZE;
+        String bitmaskStr = toDecomp.substring(start, start+BITMASK_SIZE);
+        start += BITMASK_SIZE;
+        String dictIndexStr = toDecomp.substring(start, start+DICT_INDEX_SIZE);
+
+        int location = Integer.parseInt(locationStr, 2);
+        int bitmask = Integer.parseInt(bitmaskStr, 2);
+        int dictI = Integer.parseInt(dictIndexStr, 2);
+        String dictEntry = dict.get(dictI);
+        outputBuilder.add(applyBitmask(dictEntry, bitmask, location));
+    }
+}
+
+class ConsecMismatchStrategy implements CompressionStrategy {
+
+    private final int NUM_MISMATCHES;
+    private static final int LEN_LOC = 5;
+    private static final int LEN_DICT = 4;
+
+    public ConsecMismatchStrategy(int numMismatches) {
+        this.NUM_MISMATCHES = numMismatches;
+    }
+
+    @Override
+    public int getEncodingLength() {
+        return 9;
+    }
+
+    private String applyMismatch(int mismatchStart, char[] dictEntry) {
+        for (int i=0; i!=NUM_MISMATCHES; ++i) {
+            int currI = mismatchStart + i;
+            if (dictEntry[currI] == '1') {
+                dictEntry[currI] = '0';
+            } else if (dictEntry[currI] == '0') {
+                dictEntry[currI] = '1';
+            } else {
+                throw new IllegalStateException("somehow we're dealing with more than ones and zeros");
+            }
+        }
+        return new String(dictEntry);
+    }
+
+    @Override
+    public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
+        // string which we are attempting to match
+        final String toMatch = input.getLine(inputToCompress);
+        // every dictionary entry
+        for (int dictI = 0; dictI!=dict.size(); ++dictI) {
+            char[] dictEntry = dict.get(dictI).toCharArray();
+            // every mismatch loc
+            for (int mismatchStart=0; mismatchStart<=(dictEntry.length - NUM_MISMATCHES); ++mismatchStart) {
+                // apply mismatch
+                String generated = applyMismatch(mismatchStart, dictEntry);
+                if (toMatch.equals(generated)) {
+                    // we found a match!
+                    // build output
+                    String locStr = Formatter.genBinaryString(mismatchStart, LEN_LOC);
+                    String dictStr = Formatter.genBinaryString(dictI, LEN_DICT);
+                    return new CompressionResult(locStr + dictStr);
+                }
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String toDecomp) {
+        int start = 0;
+        String locationStr = toDecomp.substring(start, start+LEN_LOC);
+        start += LEN_LOC;
+        String dictIndexStr = toDecomp.substring(start, start+LEN_DICT);
+        int location = Integer.parseInt(locationStr, 2);
+        int dictI = Integer.parseInt(dictIndexStr, 2);
+        outputBuilder.add(applyMismatch(location, dict.get(dictI).toCharArray()));
     }
 }
 
