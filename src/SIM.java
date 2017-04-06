@@ -43,7 +43,7 @@ public class SIM {
                 new ConsecMismatchStrategy(1),   // 1-bit Mismatch
                 new ConsecMismatchStrategy(2),   // 2-bit consecutive mismatch
                 new ConsecMismatchStrategy(4),   // 4-bit consecutive mismatch
-                null,   // 2-bit anywhere mismatch
+                new TwoBitAnywhereMismatchStrategy(),   // 2-bit anywhere mismatch
                 new DirectMatchEncodingStrategy(DICTIONARY_NUM_BITS)
         );
 
@@ -470,6 +470,81 @@ class ConsecMismatchStrategy implements CompressionStrategy {
         int location = Integer.parseInt(locationStr, 2);
         int dictI = Integer.parseInt(dictIndexStr, 2);
         outputBuilder.add(applyMismatch(location, dict.get(dictI).toCharArray()));
+    }
+}
+
+class TwoBitAnywhereMismatchStrategy implements CompressionStrategy {
+
+    final static int LEN_MM = 5;
+    final static int LEN_DICT_I = 4;
+
+    @Override
+    public int getEncodingLength() {
+        return LEN_MM * 2 + LEN_DICT_I;
+    }
+
+    private static String applyMismatch(String orig, int mm1, int mm2) {
+        char[] dictChars = orig.toCharArray();
+        // flip the bit in the opposite of what it currently is.
+        if (dictChars[mm1] == '1') {
+            dictChars[mm1] = '0';
+        } else if (dictChars[mm1] == '0') {
+            dictChars[mm1] = '1';
+        } else {
+            throw new IllegalStateException("somehow we're dealing with more than ones and zeros");
+        }
+        // flip the bit in the opposite of what it currently is.
+        if (dictChars[mm2] == '1') {
+            dictChars[mm2] = '0';
+        } else if (dictChars[mm2] == '0') {
+            dictChars[mm2] = '1';
+        } else {
+            throw new IllegalStateException("somehow we're dealing with more than ones and zeros");
+        }
+        return new String(dictChars);
+    }
+
+    @Override
+    public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
+        final String toMatch = input.getLine(inputToCompress);
+        // for every dictionary entry
+        for(int dictEntryI = 0; dictEntryI != dict.size(); ++dictEntryI) {
+            String dictEntry = dict.get(dictEntryI);
+            // for every mm1
+            for(int mm1=0; mm1<dictEntry.length(); ++mm1) {
+                for(int mm2=0; mm2<dictEntry.length(); ++mm2) {
+                    // if they are the same skip
+                    if (mm1 == mm2) {
+                        continue;
+                    }
+                    String attempt = applyMismatch(dictEntry, mm1, mm2);
+                    if (attempt.equals(toMatch)) {
+                        String mm1Str = Formatter.genBinaryString(mm1, LEN_MM);
+                        String mm2Str = Formatter.genBinaryString(mm2, LEN_MM);
+                        String dictIStr = Formatter.genBinaryString(dictEntryI, LEN_DICT_I);
+                        return new CompressionResult(mm1Str + mm2Str + dictIStr);
+                    }
+                }
+            }
+
+        }
+        return null;
+    }
+
+    @Override
+    public void decompress(Dictionary dict, DecompressionOutputBuilder outputBuilder, String toDecomp) {
+        int start = 0;
+        String mm1Str = toDecomp.substring(start, start+LEN_MM);
+        start += LEN_MM;
+        String mm2Str = toDecomp.substring(start, start+LEN_MM);
+        start += LEN_MM;
+        String dictIndexStr = toDecomp.substring(start, start+LEN_DICT_I);
+
+        int mm1 = Integer.parseInt(mm1Str, 2);
+        int mm2 = Integer.parseInt(mm2Str, 2);
+        int dictI = Integer.parseInt(dictIndexStr, 2);
+        String dictEntry = dict.get(dictI);
+        outputBuilder.add(applyMismatch(dictEntry, mm1, mm2));
     }
 }
 
