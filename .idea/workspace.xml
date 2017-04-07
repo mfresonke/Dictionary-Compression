@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e645478-96db-44ca-99e7-91eafd0cf8e0" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/maxfresonke/cda4630/SIM.java" afterPath="$PROJECT_DIR$/src/SIM.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/P2/SIM.java.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="P2.iws" />
@@ -30,69 +31,15 @@
       <file leaf-file-name="SIM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SIM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+            <state relative-caret-position="298">
+              <caret line="153" column="22" lean-forward="false" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
               <folding>
-                <element signature="e#0#33035#0" expanded="true" />
+                <element signature="e#0#36010#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-                <element signature="method#runProduction#0;class#SIM#0" expanded="false" />
-                <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
-                <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
-                <element signature="method#runDecompression#0;class#SIM#0" expanded="false" />
-                <element signature="class#CompressionStrategy#0" expanded="false" />
-                <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-                <element signature="e#8605#8606#0" expanded="true" />
-                <element signature="e#8640#8641#0" expanded="true" />
-                <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
-                <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
-                <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-                <element signature="method#BitmaskBasedEncodingStrategy#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-                <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-                <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-                <element signature="class#ConsecMismatchStrategy#0" expanded="false" />
-                <element signature="e#17296#17297#0" expanded="true" />
-                <element signature="e#17347#17348#0" expanded="true" />
-                <element signature="e#17399#17400#0" expanded="true" />
-                <element signature="e#17423#17424#0" expanded="true" />
-                <element signature="class#Dictionary#0" expanded="false" />
-                <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-                <element signature="method#InstructionEntry#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-                <element signature="method#equals#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-                <element signature="method#hashCode#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-                <element signature="docComment;method#Dictionary#0;class#Dictionary#0" expanded="false" />
-                <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
-                <element signature="docComment;method#Dictionary#1;class#Dictionary#0" expanded="false" />
-                <element signature="method#Dictionary#1;class#Dictionary#0" expanded="false" />
-                <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
-                <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-                <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-                <element signature="e#23982#23983#0" expanded="true" />
-                <element signature="e#24024#24025#0" expanded="true" />
-                <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
-                <element signature="class#Formatter#0" expanded="false" />
-                <element signature="class#CompressionResult#0" expanded="false" />
-                <element signature="docComment;class#CompressionInput#0" expanded="false" />
-                <element signature="class#CompressionInput#0" expanded="false" />
-                <element signature="docComment;class#DecompressionInput#0" expanded="false" />
-                <element signature="class#DecompressionInput#0" expanded="false" />
-                <element signature="e#28423#28424#0" expanded="true" />
-                <element signature="e#28461#28462#0" expanded="true" />
-                <element signature="e#28493#28494#0" expanded="true" />
-                <element signature="e#28531#28532#0" expanded="true" />
-                <element signature="e#28578#28579#0" expanded="true" />
-                <element signature="e#28630#28631#0" expanded="true" />
-                <element signature="e#28669#28670#0" expanded="true" />
-                <element signature="e#28709#28710#0" expanded="true" />
-                <element signature="e#28748#28749#0" expanded="true" />
-                <element signature="e#28800#28801#0" expanded="true" />
+                <element signature="e#8637#8638#0" expanded="true" />
+                <element signature="e#8672#8673#0" expanded="true" />
                 <element signature="class#CompressionOutputBuilder#0" expanded="false" />
                 <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-                <element signature="e#32504#32505#0" expanded="true" />
-                <element signature="e#32549#32550#0" expanded="true" />
-                <element signature="e#32591#32592#0" expanded="true" />
-                <element signature="e#32653#32654#0" expanded="true" />
-                <marker date="1490843007000" expanded="false" signature="25600:25697" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -118,20 +65,32 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="y" value="-321" />
-    <option name="width" value="1920" />
-    <option name="height" value="1058" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>WeakerAccess</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -148,6 +107,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -156,28 +117,8 @@
               <option name="myItemId" value="Dictionary-Compression" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Dictionary-Compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dictionary-Compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dictionary-Compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Dictionary-Compression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -201,19 +142,28 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Project 1/Petrinet-MIPS-Simulator" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -233,7 +183,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -243,7 +193,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -251,7 +201,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -276,7 +230,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <method />
     </configuration>
@@ -312,27 +270,6 @@
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -427,34 +364,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
     </list>
@@ -463,6 +372,30 @@
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -478,33 +411,36 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-321" width="1920" height="1058" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32712215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32712215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19382322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5372671" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -523,7 +459,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/SIM.java</url>
-          <line>795</line>
+          <line>870</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -540,68 +476,14 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33035#0" expanded="true" />
+            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runProduction#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
-            <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
-            <element signature="method#runDecompression#0;class#SIM#0" expanded="false" />
-            <element signature="class#CompressionStrategy#0" expanded="false" />
-            <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8605#8606#0" expanded="true" />
-            <element signature="e#8640#8641#0" expanded="true" />
-            <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="method#BitmaskBasedEncodingStrategy#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="class#ConsecMismatchStrategy#0" expanded="false" />
-            <element signature="e#17296#17297#0" expanded="true" />
-            <element signature="e#17347#17348#0" expanded="true" />
-            <element signature="e#17399#17400#0" expanded="true" />
-            <element signature="e#17423#17424#0" expanded="true" />
-            <element signature="class#Dictionary#0" expanded="false" />
-            <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#InstructionEntry#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#equals#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#hashCode#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#23982#23983#0" expanded="true" />
-            <element signature="e#24024#24025#0" expanded="true" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
-            <element signature="class#Formatter#0" expanded="false" />
-            <element signature="class#CompressionResult#0" expanded="false" />
-            <element signature="docComment;class#CompressionInput#0" expanded="false" />
-            <element signature="class#CompressionInput#0" expanded="false" />
-            <element signature="docComment;class#DecompressionInput#0" expanded="false" />
-            <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#28423#28424#0" expanded="true" />
-            <element signature="e#28461#28462#0" expanded="true" />
-            <element signature="e#28493#28494#0" expanded="true" />
-            <element signature="e#28531#28532#0" expanded="true" />
-            <element signature="e#28578#28579#0" expanded="true" />
-            <element signature="e#28630#28631#0" expanded="true" />
-            <element signature="e#28669#28670#0" expanded="true" />
-            <element signature="e#28709#28710#0" expanded="true" />
-            <element signature="e#28748#28749#0" expanded="true" />
-            <element signature="e#28800#28801#0" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#32504#32505#0" expanded="true" />
-            <element signature="e#32549#32550#0" expanded="true" />
-            <element signature="e#32591#32592#0" expanded="true" />
-            <element signature="e#32653#32654#0" expanded="true" />
-            <marker date="1490843007000" expanded="false" signature="25600:25697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -609,68 +491,14 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33035#0" expanded="true" />
+            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runProduction#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
-            <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
-            <element signature="method#runDecompression#0;class#SIM#0" expanded="false" />
-            <element signature="class#CompressionStrategy#0" expanded="false" />
-            <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8605#8606#0" expanded="true" />
-            <element signature="e#8640#8641#0" expanded="true" />
-            <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="method#BitmaskBasedEncodingStrategy#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="class#ConsecMismatchStrategy#0" expanded="false" />
-            <element signature="e#17296#17297#0" expanded="true" />
-            <element signature="e#17347#17348#0" expanded="true" />
-            <element signature="e#17399#17400#0" expanded="true" />
-            <element signature="e#17423#17424#0" expanded="true" />
-            <element signature="class#Dictionary#0" expanded="false" />
-            <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#InstructionEntry#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#equals#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#hashCode#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#23982#23983#0" expanded="true" />
-            <element signature="e#24024#24025#0" expanded="true" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
-            <element signature="class#Formatter#0" expanded="false" />
-            <element signature="class#CompressionResult#0" expanded="false" />
-            <element signature="docComment;class#CompressionInput#0" expanded="false" />
-            <element signature="class#CompressionInput#0" expanded="false" />
-            <element signature="docComment;class#DecompressionInput#0" expanded="false" />
-            <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#28423#28424#0" expanded="true" />
-            <element signature="e#28461#28462#0" expanded="true" />
-            <element signature="e#28493#28494#0" expanded="true" />
-            <element signature="e#28531#28532#0" expanded="true" />
-            <element signature="e#28578#28579#0" expanded="true" />
-            <element signature="e#28630#28631#0" expanded="true" />
-            <element signature="e#28669#28670#0" expanded="true" />
-            <element signature="e#28709#28710#0" expanded="true" />
-            <element signature="e#28748#28749#0" expanded="true" />
-            <element signature="e#28800#28801#0" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#32504#32505#0" expanded="true" />
-            <element signature="e#32549#32550#0" expanded="true" />
-            <element signature="e#32591#32592#0" expanded="true" />
-            <element signature="e#32653#32654#0" expanded="true" />
-            <marker date="1490843007000" expanded="false" signature="25600:25697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -678,68 +506,14 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33035#0" expanded="true" />
+            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runProduction#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
-            <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
-            <element signature="method#runDecompression#0;class#SIM#0" expanded="false" />
-            <element signature="class#CompressionStrategy#0" expanded="false" />
-            <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8605#8606#0" expanded="true" />
-            <element signature="e#8640#8641#0" expanded="true" />
-            <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="method#BitmaskBasedEncodingStrategy#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="class#ConsecMismatchStrategy#0" expanded="false" />
-            <element signature="e#17296#17297#0" expanded="true" />
-            <element signature="e#17347#17348#0" expanded="true" />
-            <element signature="e#17399#17400#0" expanded="true" />
-            <element signature="e#17423#17424#0" expanded="true" />
-            <element signature="class#Dictionary#0" expanded="false" />
-            <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#InstructionEntry#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#equals#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#hashCode#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#23982#23983#0" expanded="true" />
-            <element signature="e#24024#24025#0" expanded="true" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
-            <element signature="class#Formatter#0" expanded="false" />
-            <element signature="class#CompressionResult#0" expanded="false" />
-            <element signature="docComment;class#CompressionInput#0" expanded="false" />
-            <element signature="class#CompressionInput#0" expanded="false" />
-            <element signature="docComment;class#DecompressionInput#0" expanded="false" />
-            <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#28423#28424#0" expanded="true" />
-            <element signature="e#28461#28462#0" expanded="true" />
-            <element signature="e#28493#28494#0" expanded="true" />
-            <element signature="e#28531#28532#0" expanded="true" />
-            <element signature="e#28578#28579#0" expanded="true" />
-            <element signature="e#28630#28631#0" expanded="true" />
-            <element signature="e#28669#28670#0" expanded="true" />
-            <element signature="e#28709#28710#0" expanded="true" />
-            <element signature="e#28748#28749#0" expanded="true" />
-            <element signature="e#28800#28801#0" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#32504#32505#0" expanded="true" />
-            <element signature="e#32549#32550#0" expanded="true" />
-            <element signature="e#32591#32592#0" expanded="true" />
-            <element signature="e#32653#32654#0" expanded="true" />
-            <marker date="1490843007000" expanded="false" signature="25600:25697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -747,140 +521,123 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33035#0" expanded="true" />
+            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runProduction#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
-            <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
-            <element signature="method#runDecompression#0;class#SIM#0" expanded="false" />
-            <element signature="class#CompressionStrategy#0" expanded="false" />
-            <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8605#8606#0" expanded="true" />
-            <element signature="e#8640#8641#0" expanded="true" />
-            <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="method#BitmaskBasedEncodingStrategy#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="class#ConsecMismatchStrategy#0" expanded="false" />
-            <element signature="e#17296#17297#0" expanded="true" />
-            <element signature="e#17347#17348#0" expanded="true" />
-            <element signature="e#17399#17400#0" expanded="true" />
-            <element signature="e#17423#17424#0" expanded="true" />
-            <element signature="class#Dictionary#0" expanded="false" />
-            <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#InstructionEntry#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#equals#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#hashCode#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#23982#23983#0" expanded="true" />
-            <element signature="e#24024#24025#0" expanded="true" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
-            <element signature="class#Formatter#0" expanded="false" />
-            <element signature="class#CompressionResult#0" expanded="false" />
-            <element signature="docComment;class#CompressionInput#0" expanded="false" />
-            <element signature="class#CompressionInput#0" expanded="false" />
-            <element signature="docComment;class#DecompressionInput#0" expanded="false" />
-            <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#28423#28424#0" expanded="true" />
-            <element signature="e#28461#28462#0" expanded="true" />
-            <element signature="e#28493#28494#0" expanded="true" />
-            <element signature="e#28531#28532#0" expanded="true" />
-            <element signature="e#28578#28579#0" expanded="true" />
-            <element signature="e#28630#28631#0" expanded="true" />
-            <element signature="e#28669#28670#0" expanded="true" />
-            <element signature="e#28709#28710#0" expanded="true" />
-            <element signature="e#28748#28749#0" expanded="true" />
-            <element signature="e#28800#28801#0" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#32504#32505#0" expanded="true" />
-            <element signature="e#32549#32550#0" expanded="true" />
-            <element signature="e#32591#32592#0" expanded="true" />
-            <element signature="e#32653#32654#0" expanded="true" />
-            <marker date="1490843007000" expanded="false" signature="25600:25697" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33035#0" expanded="true" />
+            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="method#writeToFile#0;class#SIM#0" expanded="false" />
-            <element signature="method#runProduction#0;class#SIM#0" expanded="false" />
-            <element signature="method#runTesting#0;class#SIM#0" expanded="false" />
-            <element signature="method#runCompression#0;class#SIM#0" expanded="false" />
-            <element signature="method#runDecompression#0;class#SIM#0" expanded="false" />
-            <element signature="class#CompressionStrategy#0" expanded="false" />
-            <element signature="class#OriginalBinaryEncodingStrategy#0" expanded="false" />
-            <element signature="e#8605#8606#0" expanded="true" />
-            <element signature="e#8640#8641#0" expanded="true" />
-            <element signature="class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="method#decompress#0;class#RunLengthEncodingStrategy#0" expanded="false" />
-            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
-            <element signature="method#BitmaskBasedEncodingStrategy#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
-            <element signature="class#ConsecMismatchStrategy#0" expanded="false" />
-            <element signature="e#17296#17297#0" expanded="true" />
-            <element signature="e#17347#17348#0" expanded="true" />
-            <element signature="e#17399#17400#0" expanded="true" />
-            <element signature="e#17423#17424#0" expanded="true" />
-            <element signature="class#Dictionary#0" expanded="false" />
-            <element signature="class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#InstructionEntry#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#equals#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#hashCode#0;class#InstructionEntry#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#Dictionary#1;class#Dictionary#0" expanded="false" />
-            <element signature="method#sortInput#0;class#Dictionary#0" expanded="false" />
-            <element signature="method#trimToSize#0;class#Dictionary#0" expanded="false" />
-            <element signature="docComment;method#indexOf#0;class#Dictionary#0" expanded="false" />
-            <element signature="e#23982#23983#0" expanded="true" />
-            <element signature="e#24024#24025#0" expanded="true" />
-            <element signature="method#toString#0;class#Dictionary#0" expanded="false" />
-            <element signature="class#Formatter#0" expanded="false" />
-            <element signature="class#CompressionResult#0" expanded="false" />
-            <element signature="docComment;class#CompressionInput#0" expanded="false" />
-            <element signature="class#CompressionInput#0" expanded="false" />
-            <element signature="docComment;class#DecompressionInput#0" expanded="false" />
-            <element signature="class#DecompressionInput#0" expanded="false" />
-            <element signature="e#28423#28424#0" expanded="true" />
-            <element signature="e#28461#28462#0" expanded="true" />
-            <element signature="e#28493#28494#0" expanded="true" />
-            <element signature="e#28531#28532#0" expanded="true" />
-            <element signature="e#28578#28579#0" expanded="true" />
-            <element signature="e#28630#28631#0" expanded="true" />
-            <element signature="e#28669#28670#0" expanded="true" />
-            <element signature="e#28709#28710#0" expanded="true" />
-            <element signature="e#28748#28749#0" expanded="true" />
-            <element signature="e#28800#28801#0" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
             <element signature="class#CompressionOutputBuilder#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
-            <element signature="e#32504#32505#0" expanded="true" />
-            <element signature="e#32549#32550#0" expanded="true" />
-            <element signature="e#32591#32592#0" expanded="true" />
-            <element signature="e#32653#32654#0" expanded="true" />
-            <marker date="1490843007000" expanded="false" signature="25600:25697" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36010#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
+            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36010#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
+            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36010#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
+            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36010#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
+            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="153" column="22" lean-forward="false" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#36010#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8637#8638#0" expanded="true" />
+            <element signature="e#8672#8673#0" expanded="true" />
+            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
