@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e645478-96db-44ca-99e7-91eafd0cf8e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/P2/SIM.java.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SIM.java" afterPath="$PROJECT_DIR$/src/SIM.java" />
     </list>
     <ignored path="P2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,6 +18,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Dictionary-Compression$Main.coverage" NAME="Main Coverage Results" MODIFIED="1492538834912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,14 +34,16 @@
       <file leaf-file-name="SIM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SIM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="153" column="22" lean-forward="false" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+            <state relative-caret-position="150">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="12" />
               <folding>
-                <element signature="e#0#36010#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#8637#8638#0" expanded="true" />
-                <element signature="e#8672#8673#0" expanded="true" />
-                <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+                <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+                <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+                <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+                <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+                <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+                <element signature="class#DecompressionInput#0" expanded="false" />
                 <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
               </folding>
             </state>
@@ -65,10 +70,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="824" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -92,6 +96,16 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -107,11 +121,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dictionary-Compression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Dictionary-Compression" />
@@ -138,6 +158,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="SIM.java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dictionary-Compression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dictionary-Compression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -183,7 +217,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -193,7 +227,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -201,11 +235,7 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -230,11 +260,7 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <method />
     </configuration>
@@ -372,7 +398,7 @@
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -382,7 +408,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -390,7 +416,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -411,36 +441,38 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="824" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32712215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32650274" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19170243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5372671" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4795082" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -463,8 +495,14 @@
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SIM.java</url>
+          <line>935</line>
+          <properties />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -476,13 +514,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -491,13 +531,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -506,13 +548,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -521,13 +565,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -536,13 +582,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -551,13 +599,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -566,13 +616,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -581,13 +633,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -596,13 +650,15 @@
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -610,14 +666,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SIM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="153" column="22" lean-forward="false" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36010#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#8637#8638#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="class#CompressionOutputBuilder#0" expanded="false" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
+            <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SIM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#DirectMatchEncodingStrategy#0" expanded="false" />
+            <element signature="class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#applyBitmask#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="method#compress#0;class#BitmaskBasedEncodingStrategy#0" expanded="false" />
+            <element signature="class#TwoBitAnywhereMismatchStrategy#0" expanded="false" />
+            <element signature="class#DecompressionInput#0" expanded="false" />
             <element signature="class#DecompressionOutputBuilder#0" expanded="false" />
           </folding>
         </state>

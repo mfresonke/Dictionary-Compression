@@ -366,7 +366,6 @@ class BitmaskBasedEncodingStrategy implements CompressionStrategy {
     @Override
     public CompressionResult compress(Dictionary dict, CompressionInput input, int inputToCompress) {
         String toCompress = input.getLine(inputToCompress);
-
         // let's brute force this bi'!
         // for every dictionary entry...
         for(int dictEntryI = 0; dictEntryI != dict.size(); ++dictEntryI) {
@@ -424,7 +423,8 @@ class ConsecMismatchStrategy implements CompressionStrategy {
         return 9;
     }
 
-    private String applyMismatch(int mismatchStart, char[] dictEntry) {
+    private String applyMismatch(int mismatchStart, String dictEntryStr) {
+        char[] dictEntry = dictEntryStr.toCharArray();
         for (int i=0; i!=NUM_MISMATCHES; ++i) {
             int currI = mismatchStart + i;
             if (dictEntry[currI] == '1') {
@@ -444,9 +444,9 @@ class ConsecMismatchStrategy implements CompressionStrategy {
         final String toMatch = input.getLine(inputToCompress);
         // every dictionary entry
         for (int dictI = 0; dictI!=dict.size(); ++dictI) {
-            char[] dictEntry = dict.get(dictI).toCharArray();
+            String dictEntry = dict.get(dictI);
             // every mismatch loc
-            for (int mismatchStart=0; mismatchStart<=(dictEntry.length - NUM_MISMATCHES); ++mismatchStart) {
+            for (int mismatchStart=0; mismatchStart<(dictEntry.length() - NUM_MISMATCHES); ++mismatchStart) {
                 // apply mismatch
                 String generated = applyMismatch(mismatchStart, dictEntry);
                 if (toMatch.equals(generated)) {
@@ -469,7 +469,7 @@ class ConsecMismatchStrategy implements CompressionStrategy {
         String dictIndexStr = toDecomp.substring(start, start+LEN_DICT);
         int location = Integer.parseInt(locationStr, 2);
         int dictI = Integer.parseInt(dictIndexStr, 2);
-        outputBuilder.add(applyMismatch(location, dict.get(dictI).toCharArray()));
+        outputBuilder.add(applyMismatch(location, dict.get(dictI)));
     }
 }
 
@@ -930,6 +930,11 @@ class CompressionOutputBuilder {
                 sb.append("\n");
                 index += OUTPUT_WIDTH;
             }
+            // append some extra zeros!
+            sb.deleteCharAt(sb.length()-1);
+            while (sb.length()% (OUTPUT_WIDTH+1) != OUTPUT_WIDTH)
+                sb.append("0");
+            sb.append("\n");
         }
         // remove the extraneous newlines made in each loop
         sb.deleteCharAt(sb.length()-1);
